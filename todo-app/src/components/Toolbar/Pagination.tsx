@@ -28,12 +28,12 @@ const Pagination = ({ filter, setFilter }: PaginationProps) => {
   return (
     <div className="flex flex-row items-start gap-2 tablet:flex-col">
       {/* Change Items per page (block of 3 items): - Items: <number> + */}
-      <div className="join block items-center">
+      <div className="join block">
         {/* Display « to decrease page number (page > 1) */}
         {filter.itemsPerPage > 1 && (
           <button
             onClick={() => handlePageItemCount(-1)}
-            className="btn join-item btn-sm focus:outline-none"
+            className="btn join-item btn-sm w-7 focus:outline-none"
           >
             -
           </button>
@@ -46,7 +46,7 @@ const Pagination = ({ filter, setFilter }: PaginationProps) => {
         {filter.itemsPerPage < 30 && (
           <button
             onClick={() => handlePageItemCount(1)}
-            className="btn join-item btn-sm focus:outline-none"
+            className="btn join-item btn-sm w-7 focus:outline-none"
           >
             +
           </button>
@@ -59,7 +59,7 @@ const Pagination = ({ filter, setFilter }: PaginationProps) => {
         {filter.page > 1 && (
           <button
             onClick={() => handleChangePage(-1)}
-            className="btn join-item btn-sm focus:outline-none"
+            className="btn join-item btn-sm w-7 focus:outline-none"
           >
             «
           </button>
@@ -72,7 +72,7 @@ const Pagination = ({ filter, setFilter }: PaginationProps) => {
         {filter.page < filter.totalPages && (
           <button
             onClick={() => handleChangePage(1)}
-            className="btn join-item btn-sm focus:outline-none"
+            className="btn join-item btn-sm w-7 focus:outline-none"
           >
             »
           </button>

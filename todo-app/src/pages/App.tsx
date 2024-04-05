@@ -82,7 +82,7 @@ function App() {
         </header>
 
         {/* Main body: container for Toolbar & List display components */}
-        <main className="mt-8 flex min-w-80 flex-col justify-center gap-2 tablet:h-96 tablet:w-[80rem] tablet:flex-row">
+        <main className="mt-8 flex min-w-80 flex-col justify-center gap-2 tablet:w-[80rem] tablet:flex-row">
           <Toolbar
             filter={filter}
             setFilter={setFilter}
