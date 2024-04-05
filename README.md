@@ -1,6 +1,6 @@
 # Todo App (SPA)
 
-This repo is for the frontend of a web app with initial dummy data pulled from [here](https://jsonplaceholder.typicode.com/todos). Apart from the fundamental CRUD features, the app will display a toast for the user actions, filter todo list based on userId, task completion and page number. The app is integrated with a unit test using Jest as well.
+This repo is for the frontend of a web app with initial dummy data pulled from [here](https://jsonplaceholder.typicode.com/todos). Apart from the fundamental CRUD features, the app will display a toast for the user actions, filter todo list based on userId, task completion and page number. The app will be integrated with unit testing using Jest in the future.
 
 ## Dependencies
 
@@ -10,7 +10,7 @@ This repo is for the frontend of a web app with initial dummy data pulled from [
 - [Tailwind CSS](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [Jest](https://jestjs.io/)
+- [Jest](https://jestjs.io/), which is currently not properly set up. Please do not run tests yet.
 
 ## Installation
 
@@ -40,8 +40,9 @@ npm i -D prettier prettier-plugin-tailwindcss       # 6. Automatic class sorting
 npm i -D daisyui@latest                             # 7. DaisyUI (UI utilities for Tailwind CSS)
 npm i react-icons                                   # 8. React Icons
 
-# for testing React components with TypeScript
-npm i -D @types/jest jest @testing-library/react @testing-library/jest-dom # 8. Jest
+# for testing React components with TypeScript - To be continued.
+npm i -D @types/jest jest @testing-library/react @testing-library/jest-dom
+npm i --save-dev ts-jest jest-fetch-mock
 ```
 
 ### Notes
@@ -57,7 +58,7 @@ npm i -D @types/jest jest @testing-library/react @testing-library/jest-dom # 8. 
 npm run dev
 ```
 
-2. Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the application.
+2. Open your browser and visit [http://localhost:3000](http://localhost:3000), or whichever port is available to you, for viewing of the application.
 
 ## App Layout and Components
 
@@ -70,5 +71,4 @@ npm run dev
   - `components/` - React components.
   - `pages/` - Application routes/pages.
   - `styles/` - Global styles and Tailwind CSS configuration.
-  - `utils/` - Utility functions.
 - `tests/` - Contains test files for Jest.
