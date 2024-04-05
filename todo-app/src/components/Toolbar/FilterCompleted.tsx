@@ -17,7 +17,12 @@ const FilterCompleted = ({ filter, setFilter }: FilterCompletedProps) => {
   // render component ----------------------------------------------------------------------------------------------------------
   return (
     <div>
-      <button onClick={handleFilterComplete}>{filter.completed? "Ongoing" : "Completed"}</button>
+      <button
+        onClick={handleFilterComplete}
+        className="btn btn-sm w-40 border-accent focus:outline-none"
+      >
+        {filter.completed ? "Completed" : "Ongoing"}
+      </button>
     </div>
   );
 };
