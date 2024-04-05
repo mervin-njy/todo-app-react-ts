@@ -14,8 +14,7 @@ interface ListProps {
 
 const List = ({ todo, setTodo, filter, setToast }: ListProps) => {
   // variables -----------------------------------------------------------------------------------------------------------------
-  const itemsPerPage = 10;
-  const startingIndex = (filter.page - 1) * itemsPerPage;
+  const startingIndex = (filter.page - 1) * filter.itemsPerPage;
   const filteredItems = todo
     .filter((item) => {
       return (
@@ -25,7 +24,7 @@ const List = ({ todo, setTodo, filter, setToast }: ListProps) => {
     })
     .filter((_item, ind) => {
       // filter full list of items based on page number
-      return ind >= startingIndex && ind < startingIndex + itemsPerPage;
+      return ind >= startingIndex && ind < startingIndex + filter.itemsPerPage;
     });
 
   // render component ----------------------------------------------------------------------------------------------------------

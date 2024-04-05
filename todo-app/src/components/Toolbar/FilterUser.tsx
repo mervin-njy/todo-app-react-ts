@@ -17,7 +17,9 @@ const FilterUser = ({ filter, setFilter }: FilterUserProps) => {
   // render component ----------------------------------------------------------------------------------------------------------
   return (
     <div>
-      <button onClick={handleFilterUser}>{filter.userId}</button>
+      <select defaultValue={filter.userId} onChange={handleFilterUser} className="select select-ghost">
+        {filter.userId}
+      </select>
     </div>
   );
 };
