@@ -80,3 +80,7 @@ npm run dev
 3. Initially, the project structure has been thought of thoroughly, along with the flow of state and props. However, as the development continued, there were many changes that I couldn't foresee. I need to think of a more efficient way to plan and update changes to the component diagram.
 4. To add on, I have yet to integrate the button components I initially planned because of the aforementioned changes. I will make the changes accordingly given more time.
 5. Unit test has not been integrated yet, I think it will help a lot in scalability as well.
+
+Here is what the final layout and component diagrams look like:
+![layout of SPA](./diagrams/layout-final.svg)
+![Component diagram to illustrate handling of states and flow of props](./diagrams/component-diagram-final.svg)
