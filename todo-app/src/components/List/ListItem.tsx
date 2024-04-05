@@ -1,11 +1,11 @@
 // import statements -----------------------------------------------------------------------------------------------------------
 import React from "react";
-import { filter, toast, todo } from "../../pages/App";
+import { toast, todo } from "../../pages/App";
 import { MdModeEdit, MdDelete } from "react-icons/md";
 
 // types -----------------------------------------------------------------------------------------------------------------------
 interface ListItemProps {
-  item: todo;
+  item: todo; // used keys: title, completed
   ind: number;
   setTodo: React.Dispatch<React.SetStateAction<todo[]>>;
   setToast: React.Dispatch<React.SetStateAction<toast>>;
@@ -16,7 +16,9 @@ const ListItem = ({ item, ind, setTodo, setToast }: ListItemProps) => {
   return (
     <div className="flex flex-row justify-between">
       {/* index and title of each list item */}
-      <div className={`${item.completed && "font-extralight"} flex flex-row gap-4`}>
+      <div
+        className={`${item.completed && "font-extralight"} flex flex-row gap-4`}
+      >
         <p className="w-10 text-right">{ind + 1}</p>
         <p className="w-[35rem] text-left">{item.title}</p>
       </div>

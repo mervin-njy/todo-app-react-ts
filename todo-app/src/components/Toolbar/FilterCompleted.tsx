@@ -4,13 +4,13 @@ import { filter } from "../../pages/App";
 
 // types -----------------------------------------------------------------------------------------------------------------------
 interface FilterCompletedProps {
-  filter: filter;
+  filter: filter; // used keys: completed
   setFilter: React.Dispatch<React.SetStateAction<filter>>;
 }
 
 const FilterCompleted = ({ filter, setFilter }: FilterCompletedProps) => {
   // event handler -------------------------------------------------------------------------------------------------------------
-  const handleFilterComplete = () => {
+  const ToggleStatus = () => {
     setFilter({ ...filter, completed: !filter.completed });
   };
 
@@ -18,7 +18,7 @@ const FilterCompleted = ({ filter, setFilter }: FilterCompletedProps) => {
   return (
     <div>
       <button
-        onClick={handleFilterComplete}
+        onClick={ToggleStatus}
         className="btn btn-sm w-40 border-accent focus:outline-none"
       >
         {filter.completed ? "Completed" : "Ongoing"}

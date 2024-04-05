@@ -19,6 +19,7 @@ export interface filter {
   completed: boolean;
   page: number;
   itemsPerPage: number;
+  totalPages: number;
 }
 
 export interface toast {
@@ -35,6 +36,7 @@ function App() {
     completed: false,
     page: 1,
     itemsPerPage: 10,
+    totalPages: 1,
   });
   const [toast, setToast] = useState<toast>({ visible: false, message: "" });
 
@@ -92,6 +94,7 @@ function App() {
             todo={todo}
             setTodo={setTodo}
             filter={filter}
+            setFilter={setFilter}
             setToast={setToast}
           />
         </main>

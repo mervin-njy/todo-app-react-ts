@@ -4,7 +4,7 @@ import { filter } from "../../pages/App";
 
 // types -----------------------------------------------------------------------------------------------------------------------
 interface FilterUserProps {
-  filter: filter;
+  filter: filter; // used keys: userId
   setFilter: React.Dispatch<React.SetStateAction<filter>>;
 }
 

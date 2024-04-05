@@ -5,7 +5,7 @@ import { IoCloseSharp } from "react-icons/io5";
 
 // types -----------------------------------------------------------------------------------------------------------------------
 interface ToastProps {
-  toast: toast;
+  toast: toast; // used keys: message, visible
   setToast: React.Dispatch<React.SetStateAction<toast>>;
 }
 
