@@ -99,7 +99,7 @@ const ListItem = ({ item, ind, filter, setTodo, setToast }: ListItemProps) => {
             type="text"
             value={updatedTask}
             onChange={(e) => setUpdatedTask(e.target.value)}
-            className="input input-sm input-bordered input-ghost w-[35rem]"
+            className="input input-sm input-bordered input-info input-ghost w-[35rem]"
           />
         )}
       </div>

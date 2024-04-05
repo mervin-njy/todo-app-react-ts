@@ -14,7 +14,7 @@ interface ToolbarProps {
 const Toolbar = ({ filter, setFilter }: ToolbarProps) => {
   // render component ----------------------------------------------------------------------------------------------------------
   return (
-    <div className="bg-bgSecondary flex flex-row items-start justify-between rounded-xl p-4 tablet:flex-col">
+    <div className="flex flex-row items-start justify-between rounded-xl bg-bgSecondary p-4 tablet:min-h-80 tablet:flex-col">
       <div className="flex flex-row items-center gap-2 tablet:flex-col">
         <FilterUser filter={filter} setFilter={setFilter} />
         <FilterCompleted filter={filter} setFilter={setFilter} />
