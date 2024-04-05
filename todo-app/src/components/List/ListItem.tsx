@@ -14,7 +14,7 @@ interface ListItemProps {
 
 const ListItem = ({ item, ind, filter, setTodo, setToast }: ListItemProps) => {
   // useState ------------------------------------------------------------------------------------------------------------------
-  const [updateSuccess, setUpdateSuccess] = useState<boolean>(false); // render success by changing font of title
+  //   const [updateSuccess, setUpdateSuccess] = useState<boolean>(false); // render success by changing font of title
   const [updatedTask, setUpdatedTask] = useState<string>(""); // updated task to amend in todo state
 
   // event handler -------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,8 @@ const ListItem = ({ item, ind, filter, setTodo, setToast }: ListItemProps) => {
     // show toast message
     setToast({
       visible: true,
-      message: `Task: ${item.title} - ${item.completed ? "is still ongoing..." : "completed!"}`,
+      action: "Task Status",
+      message: `User ${item.userId}: ${item.title} - ${item.completed ? "is still ongoing..." : "completed!"}`,
     });
   };
 
@@ -57,7 +58,11 @@ const ListItem = ({ item, ind, filter, setTodo, setToast }: ListItemProps) => {
       ),
     );
     // show toast message
-    setToast({ visible: true, message: `Updated task: ${item.title}!` });
+    setToast({
+      visible: true,
+      action: "Update",
+      message: `User ${item.userId}: ${item.title}!`,
+    });
   };
 
   const handleDelete = () => {
@@ -66,7 +71,11 @@ const ListItem = ({ item, ind, filter, setTodo, setToast }: ListItemProps) => {
       prevTodo.filter((todoItem) => todoItem.id !== item.id),
     );
     // show toast message
-    setToast({ visible: true, message: `Deleted task: ${item.title}!` });
+    setToast({
+      visible: true,
+      action: "Delete",
+      message: `User ${item.userId}: ${item.title}!`,
+    });
   };
 
   // render component ----------------------------------------------------------------------------------------------------------

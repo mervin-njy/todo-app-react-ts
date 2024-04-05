@@ -1,6 +1,7 @@
 // import statements -----------------------------------------------------------------------------------------------------------
 import List from "../components/List";
 import Toolbar from "../components/Toolbar";
+import Toast from "../components/Toolbar/Toast";
 import "../styles/App.css";
 import { useEffect, useState } from "react";
 
@@ -24,6 +25,7 @@ export interface filter {
 
 export interface toast {
   visible: boolean;
+  action: string;
   message: string;
 }
 
@@ -38,7 +40,11 @@ function App() {
     itemsPerPage: 10,
     totalPages: 1,
   });
-  const [toast, setToast] = useState<toast>({ visible: false, message: "" });
+  const [toast, setToast] = useState<toast>({
+    visible: false,
+    action: "",
+    message: "",
+  });
 
   // useEffect -----------------------------------------------------------------------------------------------------------------
   useEffect(() => {
@@ -83,12 +89,7 @@ function App() {
 
         {/* Main body: container for Toolbar & List display components */}
         <main className="mt-8 flex min-w-80 flex-col justify-center gap-2 tablet:w-[80rem] tablet:flex-row">
-          <Toolbar
-            filter={filter}
-            setFilter={setFilter}
-            toast={toast}
-            setToast={setToast}
-          />
+          <Toolbar filter={filter} setFilter={setFilter} />
 
           <List
             todo={todo}
@@ -98,6 +99,10 @@ function App() {
             setToast={setToast}
           />
         </main>
+
+        <div className="mt-10 flex min-w-80 flex-row justify-center tablet:w-[80rem]">
+          {toast.visible && <Toast toast={toast} setToast={setToast} />}
+        </div>
       </div>
     </>
   );

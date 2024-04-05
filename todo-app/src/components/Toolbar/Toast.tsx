@@ -5,7 +5,7 @@ import { IoCloseSharp } from "react-icons/io5";
 
 // types -----------------------------------------------------------------------------------------------------------------------
 interface ToastProps {
-  toast: toast; // used keys: message, visible
+  toast: toast; // used keys: message, action, visible
   setToast: React.Dispatch<React.SetStateAction<toast>>;
 }
 
@@ -17,14 +17,26 @@ const Toast = ({ toast, setToast }: ToastProps) => {
 
   // render component ----------------------------------------------------------------------------------------------------------
   return (
-    <div>
-      <div className="fixed bottom-0 right-0 bg-gray-800 p-4 text-white">
-        <button className="float-right" onClick={handleCloseToast}>
-          {/* TODO: close automatically after n seconds */}
-          <IoCloseSharp size={15} />
-        </button>
-        <p>{toast.message}</p>
+    <div className="hover:bg-bgSecondary fixed right-8 flex w-96 flex-row items-start justify-between rounded-xl border-2 border-accent p-4 text-white tablet:right-20 tablet:top-10">
+      <div className="flex flex-col items-start gap-2 pl-4">
+        <div className="flex flex-row items-center gap-2">
+          <h3 className="text-lg font-bold">Action</h3>
+          <div
+            className={`badge ${toast.action === "Add" && "badge-success"} ${toast.action === "Task Status" && "badge-warning"} ${toast.action === "Update" && "badge-accent"} ${toast.action === "Delete" && "badge-error"}`}
+          >
+            {toast.action}
+          </div>
+        </div>
+
+        <p className="text-left text-lg">{toast.message}</p>
       </div>
+
+      {/* TODO: close automatically after n seconds */}
+      <IoCloseSharp
+        onClick={handleCloseToast}
+        size={20}
+        className="cursor-pointer text-accent"
+      />
     </div>
   );
 };

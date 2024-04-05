@@ -65,7 +65,11 @@ const List = ({ todo, setTodo, filter, setFilter, setToast }: ListProps) => {
       ];
     });
     // show toast message
-    setToast({ visible: true, message: `Added new task: ${newTask}!` });
+    setToast({
+      visible: true,
+      action: "Add",
+      message: `user ${filter.userId}: ${newTask}`,
+    });
   };
 
   // render component ----------------------------------------------------------------------------------------------------------
