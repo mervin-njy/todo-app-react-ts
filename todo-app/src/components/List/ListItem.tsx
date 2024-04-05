@@ -1,17 +1,18 @@
 // import statements -----------------------------------------------------------------------------------------------------------
 import React from "react";
-import { toast, todo } from "../../pages/App";
+import { filter, toast, todo } from "../../pages/App";
 import { MdModeEdit, MdDelete } from "react-icons/md";
 
 // types -----------------------------------------------------------------------------------------------------------------------
 interface ListItemProps {
   item: todo; // used keys: title, completed
   ind: number;
+  filter: filter; // used keys: itemsPerPage, page
   setTodo: React.Dispatch<React.SetStateAction<todo[]>>;
   setToast: React.Dispatch<React.SetStateAction<toast>>;
 }
 
-const ListItem = ({ item, ind, setTodo, setToast }: ListItemProps) => {
+const ListItem = ({ item, ind, filter, setTodo, setToast }: ListItemProps) => {
   // render component ----------------------------------------------------------------------------------------------------------
   return (
     <div className="flex flex-row justify-between">
@@ -19,7 +20,9 @@ const ListItem = ({ item, ind, setTodo, setToast }: ListItemProps) => {
       <div
         className={`${item.completed && "font-extralight"} flex flex-row gap-4`}
       >
-        <p className="w-10 text-right">{ind + 1}</p>
+        <p className="w-10 text-right">
+          {filter.itemsPerPage * (filter.page - 1) + ind + 1}
+        </p>
         <p className="w-[35rem] text-left">{item.title}</p>
       </div>
 

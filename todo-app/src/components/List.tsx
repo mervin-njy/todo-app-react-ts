@@ -50,6 +50,7 @@ const List = ({ todo, setTodo, filter, setFilter, setToast }: ListProps) => {
             <ListItem
               item={item}
               ind={ind}
+              filter={filter}
               setTodo={setTodo}
               setToast={setToast}
             />
