@@ -10,8 +10,9 @@ export default {
         primary: "#F1FDFF", // tealish - light
         secondary: "#CACCFF", // purple - light
         accent: "#a29bfe", // purple bright - main accent
-        neutral: "#6A679B", // purple grey - dark
-        background: "#141516", // grey - dark
+        neutral: "#6A679B", // purple grey - neutral
+        bgPrimary: "#141516", // grey - dark
+        bgSecondary: "#383752", // purple grey - darker
       },
       screens: {
         mobile: "360px", // => @media (min-width: 360px) { ... }

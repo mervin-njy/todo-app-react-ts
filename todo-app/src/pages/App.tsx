@@ -53,15 +53,24 @@ function App() {
       .catch((error) => console.error("Error: ", error));
   }, []);
 
+  useEffect(() => {
+    // for debugging
+    console.log("todo: ", todo);
+    console.log("filter: ", filter);
+    console.log("toast", toast);
+  }, [todo, filter, toast]);
+
   // render component ----------------------------------------------------------------------------------------------------------
   return (
     <>
-      <div className="mb-10 font-karla">
+      <div className="mb-10 h-screen font-karla">
         {/* Header: App home page title */}
-        <header className="mt-10 text-6xl">To do list</header>
+        <header className="mt-10 text-4xl font-semibold tracking-wide tablet:text-5xl">
+          Tasks
+        </header>
 
         {/* Main body: container for Toolbar & List display components */}
-        <main className="flex flex-row justify-center gap-6">
+        <main className="mt-8 flex min-w-80 flex-col justify-center gap-2 tablet:h-96 tablet:w-[80rem] tablet:flex-row">
           <Toolbar
             filter={filter}
             setFilter={setFilter}
@@ -69,7 +78,12 @@ function App() {
             setToast={setToast}
           />
 
-          <List todo={todo} setTodo={setTodo} filter={filter} setToast={setToast} />
+          <List
+            todo={todo}
+            setTodo={setTodo}
+            filter={filter}
+            setToast={setToast}
+          />
         </main>
       </div>
     </>

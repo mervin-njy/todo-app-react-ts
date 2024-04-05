@@ -17,12 +17,14 @@ interface ToolbarProps {
 const Toolbar = ({ filter, setFilter, toast, setToast }: ToolbarProps) => {
   // render component ----------------------------------------------------------------------------------------------------------
   return (
-    <div className="flex flex-col justify-start gap-4">
-      <FilterUser filter={filter} setFilter={setFilter} />
-      <FilterCompleted filter={filter} setFilter={setFilter} />
+    <div className="bg-bgSecondary flex flex-row items-start justify-between rounded-xl p-4 tablet:w-52 tablet:flex-col">
+      <div className="flex flex-row items-start tablet:flex-col gap-2">
+        <FilterUser filter={filter} setFilter={setFilter} />
+        <FilterCompleted filter={filter} setFilter={setFilter} />
+      </div>
       <Pagination filter={filter} setFilter={setFilter} />
 
-      <Toast toast={toast} setToast={setToast} />
+      {toast.visible && <Toast toast={toast} setToast={setToast} />}
     </div>
   );
 };
