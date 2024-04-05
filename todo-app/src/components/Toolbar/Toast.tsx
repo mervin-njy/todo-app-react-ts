@@ -22,13 +22,13 @@ const Toast = ({ toast, setToast }: ToastProps) => {
         <div className="flex flex-row items-center gap-2">
           <h3 className="text-lg font-bold">Action</h3>
           <div
-            className={`badge ${toast.action === "Add" && "badge-success"} ${toast.action === "Task Status" && "badge-warning"} ${toast.action === "Update" && "badge-accent"} ${toast.action === "Delete" && "badge-error"}`}
+            className={`badge ${toast.action === "Add" && "badge-success"} ${toast.action === "Task Status" && "badge-warning"} ${toast.action === "Update" && "badge-info"} ${toast.action === "Delete" && "badge-error"}`}
           >
             {toast.action}
           </div>
         </div>
 
-        <p className="text-left text-lg">{toast.message}</p>
+        <p className="text-left text-sm">{toast.message}</p>
       </div>
 
       {/* TODO: close automatically after n seconds */}

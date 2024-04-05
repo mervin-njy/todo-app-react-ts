@@ -72,3 +72,11 @@ npm run dev
   - `pages/` - Application routes/pages.
   - `styles/` - Global styles and Tailwind CSS configuration.
 - `tests/` - Contains test files for Jest.
+
+## Post Assignment thoughts / further improvements or intentions
+
+1. Perhaps showing the total number of tasks for each user within the toolbar makes it easier to track the changes made.
+2. Adding a delay to automatically close Toast would be helpful.
+3. Initially, the project structure has been thought of thoroughly, along with the flow of state and props. However, as the development continued, there were many changes that I couldn't foresee. I need to think of a more efficient way to plan and update changes to the component diagram.
+4. To add on, I have yet to integrate the button components I initially planned because of the aforementioned changes. I will make the changes accordingly given more time.
+5. Unit test has not been integrated yet, I think it will help a lot in scalability as well.
